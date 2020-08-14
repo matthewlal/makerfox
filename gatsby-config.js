@@ -1,5 +1,8 @@
 const path = require('path');
 const config = require('./src/config');
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 module.exports = {
   pathPrefix: "/gatsby-starter-builder",
   siteMetadata: {
@@ -25,7 +28,8 @@ module.exports = {
       resolve: '@builder.io/gatsby',
       options: {
         /** TODO: update this with your API key! */
-        publicAPIKey: config.builderAPIKey,
+        //publicAPIKey: config.builderAPIKey,
+        publicAPIKey: 'e6b8ce5842eb449fb37c66c14276913d',
         templates: {
           // Render every `page` model as a new page using the /page.tsx template
           // based on the URL provided in Builder.io
